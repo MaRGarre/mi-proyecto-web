@@ -45,3 +45,15 @@ nav ul li a {
 	height: auto;
 	border: 1px solid #ccc;
 }
+
+.cover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #222;
+	color: #fff;
+}
+
+
+

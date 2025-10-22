@@ -47,12 +47,41 @@ nav ul li a {
 }
 
 .cover {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background: #222;
-	color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000000;
+  color: #fff;
+  max-width: 100vw;
+}
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid currentColor;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
+}
+
+/* Default typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 18ch; / ch = width of "0", matches character count
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+  
 }
 
 

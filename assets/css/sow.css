@@ -3,14 +3,63 @@ header {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-section {
-    height: 90vh;
+:root{
+  --site-max-width: 1100px;
+  --site-gap: clamp(1rem, 4vw, 2rem);
+  --site-top-gap: clamp(1.5rem, 3.5vw, 3rem);
 }
 
+/* Reset lateral padding: centra el contenido con un contenedor */
+body {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Centrar y limitar ancho del contenido principal */
+main {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: var(--site-gap);
+  box-sizing: border-box;
+}
+main > section iframe {
+  display: block;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: 100vw;
+  border: 0;
+}
+main > section.cover {
+  /* hacer la portada full-bleed como los iframes */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--site-top-gap) var(--site-gap);
+  min-height: 60vh; /* ajusta si quieres más o menos altura */
+}
+
+/* Ajustar nav fijo para quedar centrado dentro del ancho máximo */
 nav {
-	position: fixed;
-	top: 0;
-	z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - (var(--site-gap) * 2));
+  max-width: var(--site-max-width);
+  z-index: 1000;
   background-color: #ffffff;
   padding: clamp(1rem, 4vw, 2rem);
 }
@@ -28,8 +77,11 @@ nav ul li a {
 	color: #333;
 }
 .analysis-text {
+	text-align: left;
 	columns: 1;
 	column-gap: 2rem;
+	margin: 0 auto;
+	max-width: 900px;
 }
 @media (min-width: 800px) {
 	.analysis-text {
@@ -38,14 +90,19 @@ nav ul li a {
 }
 
 .screenshots {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0.5rem auto 2rem; /* centra el bloque de imágenes */
+  justify-items: center;
+  align-items: start;
 }
 .screenshots img {
-	width: 100%;
-	height: auto;
-	border: 1px solid #ccc;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .cover {
@@ -84,6 +141,28 @@ nav ul li a {
     border-color: transparent;
   }
   
+}
+
+.analysis-intro {
+  max-width: 900px;
+  margin: 0.5rem auto 1rem; /* centra y separa */
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+}
+
+/* Responsive tweaks */
+@media (max-width: 800px) {
+  main {
+    padding: calc(var(--site-gap) / 2);
+  }
+  nav {
+    width: calc(100% - (var(--site-gap)));
+  }
+  .analysis-text {
+    columns: 1;
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
 }
 
 

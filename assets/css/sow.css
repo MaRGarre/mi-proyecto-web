@@ -187,6 +187,8 @@ header {
   --site-max-width: 1100px;
   --site-gap: clamp(1rem, 4vw, 2rem);
   --site-top-gap: clamp(1.5rem, 3.5vw, 3rem);
+  --nav-height: clamp(56px, 8vh, 72px);
+  --nav-padding: clamp(0.5rem, 2vw, 1rem);
 }
 
 /* Reset lateral padding: centra el contenido con un contenedor */
@@ -240,22 +242,63 @@ nav {
   width: calc(100% - (var(--site-gap) * 2));
   max-width: var(--site-max-width);
   z-index: 1000;
-  background-color: #ffffff;
-  padding: clamp(1rem, 4vw, 2rem);
+  background-color: rgba(255,255,255,0.95);
+  padding: var(--nav-padding);
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
 }
+
+/* evita que el contenido quede oculto bajo la barra fija */
+main {
+  padding-top: calc(var(--nav-height) + var(--site-gap));
+}
+
+/* nav interior: centrar enlaces y hacer responsive */
 nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* centra los títulos */
+  align-items: center;
+  flex-wrap: wrap; /* permite que se adapten en pantallas pequeñas */
 }
+
 nav ul li {
-	margin-right: 1rem;
+  margin: 0;
 }
+
 nav ul li a {
-	text-decoration: none;
-	color: #333;
+  text-decoration: none;
+  color: #333;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  text-align: center;
 }
+
+@media (max-width: 600px) {
+  :root {
+    --nav-height: 56px;
+  }
+  nav {
+    width: calc(100% - (var(--site-gap)));
+    padding: calc(var(--nav-padding) * 0.9);
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+  nav ul li a {
+    font-size: clamp(0.82rem, 2.4vw, 1rem);
+    padding: 0.25rem 0.6rem;
+  }
+}
+
 .analysis-text {
 	text-align: left;
 	columns: 1;
@@ -271,7 +314,7 @@ nav ul li a {
 
 .screenshots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* Aumenta el tamaño mínimo a 300px */
   gap: 1rem;
   max-width: 900px;
   margin: 0.5rem auto 2rem; /* centra el bloque de imágenes */
@@ -328,6 +371,12 @@ nav ul li a {
   margin: 0.5rem auto 1rem; /* centra y separa */
   line-height: 1.6;
   font-size: clamp(1rem, 1.6vw, 1.125rem);
+}
+
+/* Centrar los títulos de cada sección */
+h2 {
+  text-align: center; /* Alinea el texto al centro */
+  margin: 1.5rem 0; /* Espaciado superior e inferior */
 }
 
 /* Responsive tweaks */

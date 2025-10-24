@@ -25,7 +25,7 @@ body {
 	padding: 0;
 }
 
-/* Typography */
+
 h1,
 h2,
 h3,
@@ -52,7 +52,7 @@ li {
 	margin-bottom: 1rem;
 }
 
-/* Layout */
+
 .container {
 	max-width: 1200px;
 	margin: 1 auto;
@@ -64,14 +64,14 @@ main {
 	padding: 2rem 0;
 }
 
-/* Header */
+
 header {
 	background: #f8f9fa;
 	padding: 1rem 0;
 	border-bottom: 1px solid #e9ecef;
 }
 
-/* Footer */
+
 footer {
 	background: #f8f9fa;
 	padding: 2rem 0;
@@ -90,7 +90,7 @@ footer a:hover {
 	text-decoration: underline;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
 	html {
 		font-size: 14px;
@@ -111,14 +111,14 @@ footer a:hover {
 	}
 }
 
-/* Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
 }
 
-/* Focus styles for keyboard navigation */
+
 a:focus,
 button:focus,
 input:focus,
@@ -128,7 +128,7 @@ select:focus {
 	outline-offset: 2px;
 }
 
-/* Skip link for screen readers */
+
 .skip-link {
 	position: absolute;
 	top: -40px;
@@ -145,7 +145,7 @@ select:focus {
 	top: 6px;
 }
 
-/* latin-ext */
+
 @font-face {
   font-family: 'Zen Dots';
   font-style: normal;
@@ -154,7 +154,7 @@ select:focus {
   src: url(https://fonts.gstatic.com/s/zendots/v14/XRXX3ICfm00IGoesQdaNRs71cA.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
   font-family: 'Zen Dots';
   font-style: normal;
@@ -191,14 +191,14 @@ header {
   --nav-padding: clamp(0.5rem, 2vw, 1rem);
 }
 
-/* Reset lateral padding: centra el contenido con un contenedor */
+
 body {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
 }
 
-/* Centrar y limitar ancho del contenido principal */
+
 main {
   max-width: var(--site-max-width);
   margin: 0 auto;
@@ -217,7 +217,7 @@ main > section iframe {
   border: 0;
 }
 main > section.cover {
-  /* hacer la portada full-bleed como los iframes */
+  
   position: relative;
   left: 50%;
   right: 50%;
@@ -230,10 +230,10 @@ main > section.cover {
   justify-content: center;
   align-items: center;
   padding: var(--site-top-gap) var(--site-gap);
-  min-height: 60vh; /* ajusta si quieres más o menos altura */
+  min-height: 60vh;
 }
 
-/* Ajustar nav fijo para quedar centrado dentro del ancho máximo */
+
 nav {
   position: fixed;
   top: 0;
@@ -251,21 +251,21 @@ nav {
   backdrop-filter: blur(6px);
 }
 
-/* evita que el contenido quede oculto bajo la barra fija */
+
 main {
   padding-top: calc(var(--nav-height) + var(--site-gap));
 }
 
-/* nav interior: centrar enlaces y hacer responsive */
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 1rem;
-  justify-content: center; /* centra los títulos */
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* permite que se adapten en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -314,10 +314,10 @@ nav ul li a {
 
 .screenshots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* Aumenta el tamaño mínimo a 300px */
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 1rem;
   max-width: 900px;
-  margin: 0.5rem auto 2rem; /* centra el bloque de imágenes */
+  margin: 0.5rem auto 2rem;
   justify-items: center;
   align-items: start;
 }
@@ -368,18 +368,34 @@ nav ul li a {
 
 .analysis-intro {
   max-width: 900px;
-  margin: 0.5rem auto 1rem; /* centra y separa */
+  margin: 0.5rem auto 1rem;
   line-height: 1.6;
   font-size: clamp(1rem, 1.6vw, 1.125rem);
 }
 
-/* Centrar los títulos de cada sección */
 h2 {
-  text-align: center; /* Alinea el texto al centro */
-  margin: 1.5rem 0; /* Espaciado superior e inferior */
+  text-align: center;
+  margin: 1.5rem 0;
 }
 
-/* Responsive tweaks */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+section h2 {
+  font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #111;
+  margin: 0 0 0.75rem;
+}
+
+@media (min-width: 900px) {
+  section h2 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 800px) {
   main {
     padding: calc(var(--site-gap) / 2);
@@ -392,6 +408,64 @@ h2 {
     max-width: 100%;
     padding: 0 0.25rem;
   }
+}
+
+.btn,
+.button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #111;
+  box-shadow: 0 6px 18px rgba(17,17,17,0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.btn--primary { background-color: #0d6efd; color: #fff; }
+.btn--ghost {
+  background: transparent;
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: none;
+}
+
+.btn:hover,
+.button:hover,
+.btn:active,
+.button:active {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(17,17,17,0.12);
+  background-color: color-mix(in srgb, var(--btn-hover, #0b5ed7) 80%, #111 20%);
+}
+
+.btn:focus,
+.button:focus,
+.btn:focus-visible,
+.button:focus-visible {
+  outline: 3px solid rgba(13,110,253,0.18);
+  outline-offset: 3px;
+  box-shadow: 0 10px 30px rgba(13,110,253,0.08);
+}
+
+nav a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  color: #0d6efd;
+  text-decoration: none;
+  transform: translateY(-2px);
+  transition: transform 160ms ease, color 160ms ease;
 }
 
 

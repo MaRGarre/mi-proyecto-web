@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -18,19 +19,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #fde611 0%, #1e99fd 100%);
+            background-image: url(https://ik.imagekit.io/MaRGarre/1200px-Flag_of_Asturias.svg_-1-e1600086414829.png?updatedAt=1762446289968);
             text-align: center;
             padding: 2rem;
+            background-position: center;
+            background-size: cover;
         }
 
         .hero h1 {
+            font-family: 'PT Serif', Georgia, serif;
             font-size: clamp(2.5rem, 7vw, 5rem);
             color: white;
             margin-bottom: 1rem;
-            font-weight: 900;
+            font-weight: 700; /* PT Serif dispone hasta 700 en esta importación */
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
+            text-shadow: 4px 4px 8px rgba(10, 25, 80, 0.85), 8px 8px 18px rgba(10, 25, 80, 0.35);
         }
 
         .hero p {
